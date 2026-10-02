@@ -1,0 +1,28 @@
+{
+  "name": "okta-ticketing-system",
+  "version": "1.0.0",
+  "description": "This is a web application for managing incoming Outlook emails as tickets. The goal is to help a support team organize its mailbox, assign responsibility, and track and have complete log of done work.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rossiko22/Ticketing-System-Outlook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rossiko22/Ticketing-System-Outlook/issues"
+  },
+  "homepage": "https://github.com/rossiko22/Ticketing-System-Outlook#readme",
+  "devDependencies": {
+    "@types/argon2": "^0.14.1",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "argon2": "^0.45.1"
+  }
+}

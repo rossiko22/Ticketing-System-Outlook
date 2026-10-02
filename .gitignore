@@ -1,2 +1,8 @@
 # ignore all .txt files
 *.txt
+*.drawio
+*.bkp
+figma-design
+dist
+
+node_modules
