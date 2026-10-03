@@ -4,6 +4,9 @@
   "description": "This is a web application for managing incoming Outlook emails as tickets. The goal is to help a support team organize its mailbox, assign responsibility, and track and have complete log of done work.",
   "main": "index.js",
   "scripts": {
+    "generate-test-passwords": "tsx src/scripts/generate-password-hashes.ts",
+    "migration": "tsx src/scripts/migrate.ts",
+    "seed": "tsx src/scripts/seed-development.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,16 +16,28 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/rossiko22/Ticketing-System-Outlook/issues"
   },
   "homepage": "https://github.com/rossiko22/Ticketing-System-Outlook#readme",
   "devDependencies": {
     "@types/argon2": "^0.14.1",
+    "@types/connect-pg-simple": "^7.0.3",
+    "@types/express": "^5.0.6",
+    "@types/express-session": "^1.19.0",
+    "@types/node": "^26.6.4",
+    "@types/pg": "^8.23.1",
+    "node-pg-migrate": "^9.0.0",
+    "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   },
   "dependencies": {
-    "argon2": "^0.45.1"
+    "argon2": "^0.45.1",
+    "connect-pg-simple": "^10.0.0",
+    "dotenv": "^18.0.5",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "pg": "^8.23.1"
   }
 }

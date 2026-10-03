@@ -2,7 +2,10 @@
 *.txt
 *.drawio
 *.bkp
+*.idea
+.env
 figma-design
 dist
+
 
 node_modules
