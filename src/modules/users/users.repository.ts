@@ -13,7 +13,7 @@ export async function findByEmail(email: string): Promise<User | null>{
                 avatar_path as "avatarPath",
                 is_active as "isActive",
                 created_at as "createdAt",
-                updated_at as "updatedAt",
+                updated_at as "updatedAt"
             FROM users
             WHERE lower(email) = lower($1)
         `,
@@ -34,7 +34,7 @@ export async function findById(id: UUID): Promise<User | null>{
                 avatar_path as "avatarPath",
                 is_active as "isActive",
                 created_at as "createdAt",
-                updated_at as "updatedAt",
+                updated_at as "updatedAt"
             FROM users
             WHERE id = lower($1)
         `,

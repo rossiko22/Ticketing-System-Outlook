@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>New message · Company Mail Portal</title>
+    <link rel="icon" href="assets/images/company-mail-logo.png">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/composer.css">
+  </head>
+  <body data-page="compose">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Application navigation">
+        <a class="sidebar-brand" href="app.html" aria-label="Ticket Mail home"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>Ticket Mail</span><small class="version mono">v2.4</small></a> <a class="button button--primary compose-link" href="compose.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 4 6 6M4 20l5-1L21 7a2 2 0 0 0-4-4L5 15l-1 5ZM12 4H4v18h16v-9"/></svg><span>New Ticket / Compose</span></a>
+        <nav class="sidebar-nav" aria-label="Mailbox">
+          <a class="nav-link" href="app.html" aria-label="All mail"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l2 12v4H2v-4L4 4Z"/><path d="M2 15h6l2 3h4l2-3h6"/></svg><span class="nav-label">All mail</span><span class="count" data-count="all">128</span></a>
+          <a class="nav-link" href="unassigned.html" aria-label="Unassigned"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 2h6v4H9zM9 11h6m-6 4h3"/></svg><span class="nav-label">Unassigned</span><span class="count" data-count="unassigned">7</span></a>
+          <a class="nav-link" href="assigned.html" aria-label="Assigned"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 20v-3a7 7 0 0 1 14 0v3ZM16 4a3 3 0 0 1 0 6m3 4a6 6 0 0 1 3 6"/></svg><span class="nav-label">Assigned</span><span class="count" data-count="assigned">32</span></a>
+          <a class="nav-link nav-link--nested" href="assigned-to-me.html" aria-label="Assigned to me"><span class="nav-label">Assigned to me</span><span class="count" data-count="mine">11</span></a>
+          <a class="nav-link" href="settings.html" aria-label="Settings"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 3-1 3-3 1 1 3-2 2 2 2-1 3 3 1 1 3h6l1-3 3-1-1-3 2-2-2-2 1-3-3-1-1-3Z"/><circle cx="12" cy="12" r="3"/></svg><span class="nav-label">Settings</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sync-card" data-sync-state="connected">
+            <div class="row">
+              <span class="dot"></span><strong>Exchange Synced</strong>
+            </div>
+            <p class="mono" data-mailbox>support@company.internal</p><p class="mono">Polling every 30s</p>
+          </div>
+          <div class="user-card">
+            <div>
+              <strong data-current-user>Alex Chen</strong><small>IT Ops Specialist</small>
+            </div>
+            <button type="button" class="icon-button" aria-label="Sign out" title="Sign out" data-action="logout" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3H4v18h6m-1-9h13m-4-4 4 4-4 4"/></svg></button>
+          </div>
+        </div>
+      </aside>
+      <header class="topbar">
+        <a href="app.html" aria-label="Company Mail Portal home"><img class="brand-logo" src="assets/images/company-mail-logo.png" alt="Company Mail — Internal Ticketing" width="137" height="42"></a>
+        <nav class="top-nav" aria-label="Quick navigation">
+          <a href="app.html">All mail</a>
+          <a href="unassigned.html">Unassigned</a>
+          <a href="assigned.html">Assigned</a>
+          <a href="settings.html">Settings</a>
+        </nav>
+        <div class="search-field global-search">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><label class="sr-only" for="global-search">Search all tickets</label><input class="input" id="global-search" name="global-search" type="search" placeholder="Search tickets, senders, subjects…" data-search="global"><kbd aria-hidden="true">⌘K</kbd>
+        </div>
+        <div class="sync-indicator mono">
+          <span class="dot"></span><span data-sync-status>Mailbox Sync Active · 1m ago</span>
+        </div>
+        <a class="mobile-compose icon-button" href="compose.html" aria-label="Compose new message"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></a>
+        <div class="topbar-actions">
+          <button type="button" class="icon-button" aria-label="Notifications" title="Notifications" data-action="notifications" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg></button>
+          <button type="button" class="icon-button" aria-label="Documentation and help" title="Documentation and help" data-action="help" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 5m0 3v.1"/></svg></button>
+          <div class="profile">
+            <img class="avatar" src="assets/images/alex-chen.png" alt="" width="44" height="44">
+            <div>
+              <strong>Alex Chen</strong><small class="mono">(IT Operations)</small>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="workspace compose-workspace" id="main-content">
+        <header class="workspace-heading">
+          <h1>New Ticket / Compose</h1><span class="mono muted">From: support@company.internal</span>
+        </header>
+        <div class="compose-page">
+          <div class="compose-intro">
+            <p class="eyebrow">Shared support mailbox</p><h2>Start a new conversation</h2><p class="muted">Send an email from your team’s connected Outlook mailbox.</p>
+          </div>
+          <section class="composer" id="reply-composer" aria-labelledby="composer-title">
+            <form id="compose-form" data-form="compose">
+              <header class="composer-header">
+                <div class="row">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 4 6 6M4 20l5-1L21 7a2 2 0 0 0-4-4L5 15l-1 5ZM12 4H4v18h16v-9"/></svg><h2 id="composer-title">New message</h2>
+                </div>
+                <span class="mono muted" data-draft-status>Draft</span>
+              </header>
+              <div class="composer-addresses">
+                <div class="address-field">
+                  <label for="reply-to">To</label><input id="reply-to" name="to" type="email" multiple required value="" placeholder="recipient@company.internal">
+                </div>
+                <div class="address-field">
+                  <label for="reply-cc">Cc</label><input id="reply-cc" name="cc" type="email" multiple value="" placeholder="Add recipients">
+                </div>
+                <details class="bcc-field">
+                  <summary>Add Bcc</summary>
+                  <div class="address-field">
+                    <label for="reply-bcc">Bcc</label><input id="reply-bcc" name="bcc" type="email" multiple placeholder="Add hidden recipients">
+                  </div>
+                </details>
+                <div class="address-field">
+                  <label for="reply-subject">Subject</label><input id="reply-subject" name="subject" type="text" required value="" placeholder="Message subject">
+                </div>
+              </div>
+              <div class="formatting-toolbar" role="group" aria-label="Message formatting">
+                <button type="button" class="icon-button" aria-label="Bold" title="Bold" data-action="format-bold" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h7a4.5 4.5 0 0 1 0 9H6Zm0 9h8a4.5 4.5 0 0 1 0 9H6Z"/></svg></button>
+                <button type="button" class="icon-button" aria-label="Italic" title="Italic" data-action="format-italic" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3h9M5 21h9M15 3 9 21"/></svg></button>
+                <button type="button" class="icon-button" aria-label="Insert link" title="Insert link" data-action="format-link" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m10 13 4-4M8 16l-2 2a3 3 0 0 1-4-4l6-6a3 3 0 0 1 4 0m0 8a3 3 0 0 0 4 0l6-6a3 3 0 0 0-4-4l-2 2"/></svg></button>
+                <button type="button" class="icon-button" aria-label="Code block" title="Code block" data-action="format-code" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 6-6 6 6 6m10-12 6 6-6 6M14 3l-4 18"/></svg></button>
+                <button type="button" class="icon-button" aria-label="Bulleted list" title="Bulleted list" data-action="format-list" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.1M3 12h.1M3 18h.1"/></svg></button><span class="toolbar-spacer"></span><button type="button" class="button button--ghost button--small" data-action="insert-template" ><span>Insert canned response</span></button>
+              </div>
+              <label class="sr-only" for="reply-body">Message body</label><textarea id="reply-body" name="body" class="composer-body" rows="9" required placeholder="Write your message…"></textarea>
+              <div class="composer-attachments">
+                <label for="reply-attachments" class="field-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 13 7-7a3 3 0 0 1 4 4L9 20a5 5 0 0 1-7-7L13 2m-7 12 8-8"/></svg> Add attachments</label><input id="reply-attachments" name="attachments" type="file" multiple>
+                <div id="draft-attachment-list" data-attachment-list>
+                </div>
+              </div>
+              <div id="reply-error" class="notice notice--error" role="alert" hidden>
+                Could not send your message. Your draft has been preserved. Please try again.
+              </div>
+              <footer class="composer-footer">
+                <div class="row wrap">
+                  <button type="button" class="button button--primary" data-action="send-message" id="send-reply-button"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4L22 2ZM11 13 22 2"/></svg><span>Send message</span></button> <a class="button button--secondary" href="app.html"><span>Cancel</span></a><span class="mono muted" id="send-status" role="status"></span>
+                </div>
+                <p class="composer-note"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.1"/></svg>Sending a reply and marking a task as finished are independent actions.</p>
+              </footer>
+            </form>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

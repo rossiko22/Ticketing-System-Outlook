@@ -8,6 +8,7 @@ import {createUserController} from "./modules/users/users.controller.js";
 import {createAuthRouter} from "./modules/auth/auth.routes.js";
 import {createUserRouter} from "./modules/users/users.routes.js";
 import {errorMiddleware} from "./middleware/error.middleware.js";
+import {fileURLToPath} from "node:url";
 
 const app = express();
 
@@ -28,3 +29,13 @@ app.use(
 )
 
 app.use(errorMiddleware);
+
+const publicDirectory = fileURLToPath(
+    new URL("../public/", import.meta.url),
+);
+
+app.use(express.static(publicDirectory));
+
+app.listen(3000, () => {
+    console.log("Server running on port 3000");
+})

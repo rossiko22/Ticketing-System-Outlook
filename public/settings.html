@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Settings · Company Mail Portal</title>
+    <link rel="icon" href="assets/images/company-mail-logo.png">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/settings.css">
+  </head>
+  <body data-page="settings">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Application navigation">
+        <a class="sidebar-brand" href="app.html" aria-label="Ticket Mail home"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>Ticket Mail</span><small class="version mono">v2.4</small></a> <a class="button button--primary compose-link" href="compose.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 4 6 6M4 20l5-1L21 7a2 2 0 0 0-4-4L5 15l-1 5ZM12 4H4v18h16v-9"/></svg><span>New Ticket / Compose</span></a>
+        <nav class="sidebar-nav" aria-label="Mailbox">
+          <a class="nav-link" href="app.html" aria-label="All mail"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l2 12v4H2v-4L4 4Z"/><path d="M2 15h6l2 3h4l2-3h6"/></svg><span class="nav-label">All mail</span><span class="count" data-count="all">128</span></a>
+          <a class="nav-link" href="unassigned.html" aria-label="Unassigned"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 2h6v4H9zM9 11h6m-6 4h3"/></svg><span class="nav-label">Unassigned</span><span class="count" data-count="unassigned">7</span></a>
+          <a class="nav-link" href="assigned.html" aria-label="Assigned"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 20v-3a7 7 0 0 1 14 0v3ZM16 4a3 3 0 0 1 0 6m3 4a6 6 0 0 1 3 6"/></svg><span class="nav-label">Assigned</span><span class="count" data-count="assigned">32</span></a>
+          <a class="nav-link nav-link--nested" href="assigned-to-me.html" aria-label="Assigned to me"><span class="nav-label">Assigned to me</span><span class="count" data-count="mine">11</span></a>
+          <a class="nav-link" href="settings.html" aria-label="Settings" aria-current="page"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 3-1 3-3 1 1 3-2 2 2 2-1 3 3 1 1 3h6l1-3 3-1-1-3 2-2-2-2 1-3-3-1-1-3Z"/><circle cx="12" cy="12" r="3"/></svg><span class="nav-label">Settings</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sync-card" data-sync-state="connected">
+            <div class="row">
+              <span class="dot"></span><strong>Exchange Synced</strong>
+            </div>
+            <p class="mono" data-mailbox>support@company.internal</p><p class="mono">Polling every 30s</p>
+          </div>
+          <div class="user-card">
+            <div>
+              <strong data-current-user>Alex Chen</strong><small>IT Ops Specialist</small>
+            </div>
+            <button type="button" class="icon-button" aria-label="Sign out" title="Sign out" data-action="logout" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3H4v18h6m-1-9h13m-4-4 4 4-4 4"/></svg></button>
+          </div>
+        </div>
+      </aside>
+      <header class="topbar">
+        <a href="app.html" aria-label="Company Mail Portal home"><img class="brand-logo" src="assets/images/company-mail-logo.png" alt="Company Mail — Internal Ticketing" width="137" height="42"></a>
+        <nav class="top-nav" aria-label="Quick navigation">
+          <a href="app.html">All mail</a>
+          <a href="unassigned.html">Unassigned</a>
+          <a href="assigned.html">Assigned</a>
+          <a href="settings.html" aria-current="page">Settings</a>
+        </nav>
+        <div class="search-field global-search">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><label class="sr-only" for="global-search">Search all tickets</label><input class="input" id="global-search" name="global-search" type="search" placeholder="Search tickets, senders, subjects…" data-search="global"><kbd aria-hidden="true">⌘K</kbd>
+        </div>
+        <div class="sync-indicator mono">
+          <span class="dot"></span><span data-sync-status>Mailbox Sync Active · 1m ago</span>
+        </div>
+        <a class="mobile-compose icon-button" href="compose.html" aria-label="Compose new message"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></a>
+        <div class="topbar-actions">
+          <button type="button" class="icon-button" aria-label="Notifications" title="Notifications" data-action="notifications" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg></button>
+          <button type="button" class="icon-button" aria-label="Documentation and help" title="Documentation and help" data-action="help" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 5m0 3v.1"/></svg></button>
+          <div class="profile">
+            <img class="avatar" src="assets/images/alex-chen.png" alt="" width="44" height="44">
+            <div>
+              <strong>Alex Chen</strong><small class="mono">(IT Operations)</small>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="workspace settings-workspace" id="main-content">
+        <div class="settings-page">
+          <form id="settings-form" data-form="settings">
+            <header class="settings-heading">
+              <div>
+                <p class="eyebrow mono">Portal Preferences / Global Configuration</p><h1>Settings &amp; System Integrations</h1><p>Manage connected Outlook accounts, sync intervals, security scopes, and ticket export formats.</p>
+              </div>
+              <div class="settings-actions">
+                <button class="button" type="reset"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10a9 9 0 1 1 1 7M3 3v7h7m2-4v7l4 2"/></svg>Reset Draft Changes</button>
+                <button type="button" class="button button--primary" data-action="save-settings" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 7-7"/></svg><span>Apply Changes</span></button>
+              </div>
+            </header>
+            <div id="settings-feedback" class="notice notice--success settings-feedback" role="status" hidden>
+              Changes saved.
+            </div>
+            <section class="panel diagnostics" aria-label="System diagnostics">
+              <div class="row">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h4l3-9 6 18 3-9h4"/></svg><strong>System Diagnostics:</strong><small class="muted">All enterprise node services operating within nominal parameters</small>
+              </div>
+              <div class="diagnostic-badges">
+                <span class="badge badge--finished badge--pill">Outlook Exchange: Online</span><span class="badge badge--pill">Sync queue: 0 pending</span><span class="badge badge--pill">Storage: Synchronized</span><span class="badge badge--pill">Latency: 28ms</span>
+              </div>
+            </section>
+            <div class="settings-grid">
+              <div class="stack">
+                <section class="panel" aria-labelledby="identity-title">
+                  <div class="panel-title">
+                    <h2 id="identity-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 22V2h12v20m0-14h6v14M7 6h4M7 10h4M7 14h4m-4 8v-4h4v4"/></svg>Organization &amp; Identity</h2><span class="badge badge--pill mono">Tenant ID: ms-corp-09418</span>
+                  </div>
+                  <div class="identity-grid">
+                    <div class="identity-card">
+                      <p class="eyebrow">Enterprise Workspace</p>
+                      <div class="row">
+                        <img class="brand-logo" src="assets/images/company-mail-logo.png" alt="Company Mail" width="137" height="42">
+                        <div>
+                          <strong>Company Enterprise Global</strong><p class="mono">corp.cloud.internal</p>
+                        </div>
+                      </div>
+                      <footer class="row between">
+                        <span>Directory: Azure AD / Entra ID</span><span class="badge badge--progress">Verified</span>
+                      </footer>
+                    </div>
+                    <div class="identity-card">
+                      <div class="row">
+                        <img class="avatar avatar--large" src="assets/images/alex-chen.png" alt="" width="44" height="44">
+                        <div>
+                          <strong>Alex Chen</strong> <span class="badge badge--progress">Staff</span><p class="muted">IT Operations Specialist</p><p class="mono">alex.chen@company.internal</p>
+                        </div>
+                      </div>
+                      <footer>
+                        Global Infrastructure &amp; IT Support
+                      </footer>
+                    </div>
+                  </div>
+                </section>
+                <section class="panel" aria-labelledby="connection-title">
+                  <div class="panel-title">
+                    <h2 id="connection-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>Outlook 365 Mailbox Integration</h2><span class="badge badge--finished badge--pill"><span class="dot"></span>Connected &amp; Healthy</span>
+                  </div>
+                  <div class="mailbox-connection">
+                    <div class="connection-heading">
+                      <div class="row">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
+                        <div>
+                          <strong>support@company.internal</strong><p>Primary Shared Support Inbox · Auto-Ingest Enabled</p>
+                        </div>
+                      </div>
+                      <button type="button" class="button button--small" data-action="test-connection" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 8a8 8 0 0 0-14-3L3 8m0-5v5h5m-4 8a8 8 0 0 0 14 3l3-3m0 5v-5h-5"/></svg><span>Test Connection / Re-sync Now</span></button>
+                    </div>
+                    <dl class="connection-specs">
+                      <div>
+                        <dt>Exchange Protocol</dt><dd>Microsoft Graph API v1.0<small class="mono">TLS 1.3 Strict Enforced</small></dd>
+                      </div>
+                      <div>
+                        <dt>Ingress Cadence</dt><dd>Real-time Push Webhooks<small class="mono">Background poll: 30 seconds</small></dd>
+                      </div>
+                      <div>
+                        <dt>Synchronization State</dt><dd>Active Stream<small class="mono" data-last-sync>Last sync: 14 seconds ago</small></dd>
+                      </div>
+                    </dl>
+                  </div>
+                  <fieldset class="settings-fieldset">
+                    <legend>Ingestion &amp; Synchronization Rules</legend>
+                    <div class="preference-grid">
+                      <label class="check-card" for="category-sync"><input type="checkbox" id="category-sync" name="categorySync" checked><span><strong>Outlook Category Sync</strong><small>Bi-directionally sync tags, flags, and color marks with Microsoft 365 categories.</small></span></label>
+                      <label class="check-card" for="folder-mirroring"><input type="checkbox" id="folder-mirroring" name="folderMirroring" checked><span><strong>Folder Structure Mirroring</strong><small>Replicate user subfolders: Archive, Spam, Billing, and Priority Escapes.</small></span></label>
+                    </div>
+                  </fieldset>
+                </section>
+                <section class="panel" aria-labelledby="preferences-title">
+                  <div class="panel-title">
+                    <h2 id="preferences-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3v5m0 4v9M12 3v10m0 4v4m8-18v2m0 4v12M1 8h6m2 9h6m2-12h6"/></svg>Ticketing &amp; Storage Preferences</h2>
+                  </div>
+                  <fieldset class="settings-fieldset">
+                    <legend>Default Email Export Format</legend>
+                    <div class="export-options">
+                      <label class="export-option"><input type="radio" name="exportFormat" value="eml" checked><strong>.eml (Standard)</strong><p>Compatible with Microsoft Outlook, Apple Mail, and forensic archives.</p><small>Recommended for audit</small></label>
+                      <label class="export-option"><input type="radio" name="exportFormat" value="msg" ><strong>.msg (Outlook Native)</strong><p>Encapsulates native MAPI properties and proprietary Exchange metadata.</p><small>Windows exclusive</small></label>
+                      <label class="export-option"><input type="radio" name="exportFormat" value="pdf" ><strong>.pdf + Attachments</strong><p>Printable single-file ledger with attached binary payloads bundled.</p><small>Long-term storage</small></label>
+                    </div>
+                  </fieldset>
+                  <div class="preference-grid">
+                    <div class="preference-card">
+                      <div class="row between">
+                        <label for="auto-assignment"><strong>Auto-Assignment Engine</strong></label><input class="switch" type="checkbox" role="switch" id="auto-assignment" name="autoAssignment" checked>
+                      </div>
+                      <p>Route incoming mail to IT Specialists based on workload balancing and keyword tags.</p><small class="mono muted">Active algorithm: Round-Robin Balanced</small>
+                    </div>
+                    <div class="preference-card">
+                      <label for="cache-retention"><strong>Cache Retention (Offline Mode)</strong></label><p>Store recent ticket messages and attachments locally in encrypted storage.</p><select class="input" id="cache-retention" name="cacheRetentionDays"><option value="30">30 days</option><option value="60">60 days</option><option value="90" selected>90 days</option><option value="180">180 days</option></select><small class="mono muted">1.8 GB used</small>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <aside class="stack settings-context" aria-label="Integration information">
+                <section class="panel credentials" aria-labelledby="oauth-title">
+                  <div class="panel-title">
+                    <h2 id="oauth-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6Zm-4 10 3 3 5-6"/></svg>OAuth 2.0 Credentials</h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 5v2"/></svg>
+                  </div>
+                  <dl class="metadata">
+                    <dt>Token type</dt><dd><strong>Bearer (App Only)</strong></dd><dt>Scopes granted</dt><dd class="mono">Mail.ReadWrite, Users.Read</dd><dt>Next key rotation</dt><dd class="mono">Oct 24, 2025</dd>
+                  </dl>
+                  <div class="tenant-principal">
+                    <div class="row between">
+                      <strong>Tenant Principal</strong><button type="button" class="icon-button" aria-label="Copy tenant principal" title="Copy tenant principal" data-action="copy-tenant-id" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="7" width="12" height="14" rx="2"/><path d="M16 7V3H4v14h4"/></svg></button>
+                    </div>
+                    <p class="mono" data-tenant-id>7f8c92a1-0044-48bf-a901</p>
+                  </div>
+                </section>
+                <section class="panel" aria-labelledby="throughput-title">
+                  <div class="panel-title">
+                    <h2 id="throughput-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h4l3-9 6 18 3-9h4"/></svg>Sync Throughput (24h)</h2>
+                  </div>
+                  <figure class="throughput-chart" aria-label="Illustrative sync throughput. Peak at 10:00; 1,492 messages processed today.">
+                    <div class="chart-bars" aria-hidden="true">
+                      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <figcaption><span>04:00</span><span>10:00 (Peak)</span><span>18:00</span></figcaption>
+                  </figure>
+                  <dl class="metadata">
+                    <dt>Total processed today</dt><dd><strong>1,492 msgs</strong></dd><dt>Avg ingestion latency</dt><dd>1.2 seconds</dd><dt>Webhook drops / errors</dt><dd>0 errors</dd>
+                  </dl>
+                </section>
+                <section class="panel admin-guide" aria-labelledby="guide-title">
+                  <div class="panel-title">
+                    <h2 id="guide-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 5m0 3v.1"/></svg>IT Administrative Guide</h2>
+                  </div>
+                  <p>Need to rotate a Microsoft Graph application secret or bind a secondary dispatch mailbox? Consult the enterprise setup documentation.</p><button type="button" class="button button--ghost button--small" data-action="open-runbook" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2h9l5 5v15H5Zm9 0v6h5M8 12h8m-8 4h6"/></svg><span>Exchange Setup Runbook</span></button><p class="mono">Doc ID: MS-391</p>
+                </section>
+              </aside>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

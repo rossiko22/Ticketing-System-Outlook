@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Finished Tickets · Company Mail Portal</title>
+    <link rel="icon" href="assets/images/company-mail-logo.png">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body data-page="all">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Application navigation">
+        <a class="sidebar-brand" href="app.html" aria-label="Ticket Mail home"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>Ticket Mail</span><small class="version mono">v2.4</small></a> <a class="button button--primary compose-link" href="compose.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 4 6 6M4 20l5-1L21 7a2 2 0 0 0-4-4L5 15l-1 5ZM12 4H4v18h16v-9"/></svg><span>New Ticket / Compose</span></a>
+        <nav class="sidebar-nav" aria-label="Mailbox">
+          <a class="nav-link" href="app.html" aria-label="All mail" aria-current="page"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l2 12v4H2v-4L4 4Z"/><path d="M2 15h6l2 3h4l2-3h6"/></svg><span class="nav-label">All mail</span><span class="count" data-count="all">128</span></a>
+          <a class="nav-link" href="unassigned.html" aria-label="Unassigned"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 2h6v4H9zM9 11h6m-6 4h3"/></svg><span class="nav-label">Unassigned</span><span class="count" data-count="unassigned">7</span></a>
+          <a class="nav-link" href="assigned.html" aria-label="Assigned"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 20v-3a7 7 0 0 1 14 0v3ZM16 4a3 3 0 0 1 0 6m3 4a6 6 0 0 1 3 6"/></svg><span class="nav-label">Assigned</span><span class="count" data-count="assigned">32</span></a>
+          <a class="nav-link nav-link--nested" href="assigned-to-me.html" aria-label="Assigned to me"><span class="nav-label">Assigned to me</span><span class="count" data-count="mine">11</span></a>
+          <a class="nav-link" href="settings.html" aria-label="Settings"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 3-1 3-3 1 1 3-2 2 2 2-1 3 3 1 1 3h6l1-3 3-1-1-3 2-2-2-2 1-3-3-1-1-3Z"/><circle cx="12" cy="12" r="3"/></svg><span class="nav-label">Settings</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sync-card" data-sync-state="connected">
+            <div class="row">
+              <span class="dot"></span><strong>Exchange Synced</strong>
+            </div>
+            <p class="mono" data-mailbox>support@company.internal</p><p class="mono">Polling every 30s</p>
+          </div>
+          <div class="user-card">
+            <div>
+              <strong data-current-user>Alex Chen</strong><small>IT Ops Specialist</small>
+            </div>
+            <button type="button" class="icon-button" aria-label="Sign out" title="Sign out" data-action="logout" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3H4v18h6m-1-9h13m-4-4 4 4-4 4"/></svg></button>
+          </div>
+        </div>
+      </aside>
+      <header class="topbar">
+        <a href="app.html" aria-label="Company Mail Portal home"><img class="brand-logo" src="assets/images/company-mail-logo.png" alt="Company Mail — Internal Ticketing" width="137" height="42"></a>
+        <nav class="top-nav" aria-label="Quick navigation">
+          <a href="app.html" aria-current="page">All mail</a>
+          <a href="unassigned.html">Unassigned</a>
+          <a href="assigned.html">Assigned</a>
+          <a href="settings.html">Settings</a>
+        </nav>
+        <div class="search-field global-search">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><label class="sr-only" for="global-search">Search all tickets</label><input class="input" id="global-search" name="global-search" type="search" placeholder="Search tickets, senders, subjects…" data-search="global"><kbd aria-hidden="true">⌘K</kbd>
+        </div>
+        <div class="sync-indicator mono">
+          <span class="dot"></span><span data-sync-status>Mailbox Sync Active · 1m ago</span>
+        </div>
+        <a class="mobile-compose icon-button" href="compose.html" aria-label="Compose new message"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></a>
+        <div class="topbar-actions">
+          <button type="button" class="icon-button" aria-label="Notifications" title="Notifications" data-action="notifications" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg></button>
+          <button type="button" class="icon-button" aria-label="Documentation and help" title="Documentation and help" data-action="help" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 5m0 3v.1"/></svg></button>
+          <div class="profile">
+            <img class="avatar" src="assets/images/alex-chen.png" alt="" width="44" height="44">
+            <div>
+              <strong>Alex Chen</strong><small class="mono">(IT Operations)</small>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="workspace" id="main-content">
+        <header class="workspace-heading">
+          <div class="row wrap">
+            <h1>Finished Tickets</h1><span class="badge badge--pill">Resolved & archived</span>
+          </div>
+          <div class="workspace-metrics">
+            <span class="row"><span class="dot"></span>Live Exchange Link: Healthy</span><span>SLA breaches: <strong>0</strong></span><span>Avg resolution: <strong>18m 40s</strong></span>
+          </div>
+        </header>
+        <div class="mail-layout">
+          <section class="mail-feed" aria-label="Email tickets">
+            <form class="feed-controls" id="mail-filters" role="search">
+              <div class="row">
+                <div class="search-field">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><label class="sr-only" for="mail-search">Search this mailbox</label><input class="input" type="search" id="mail-search" name="search" placeholder="Search sender, subject, or content…">
+                </div>
+                <button type="button" class="icon-button" aria-label="Sync Outlook mailbox" title="Sync Outlook mailbox" data-action="sync-mailbox" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 8a8 8 0 0 0-14-3L3 8m0-5v5h5m-4 8a8 8 0 0 0 14 3l3-3m0 5v-5h-5"/></svg></button>
+              </div>
+              <div class="row between feed-sync">
+                <span class="row"><span class="dot"></span><span>Connected · <span data-last-sync>32s ago</span></span></span><label class="sr-only" for="sort-order">Sort tickets</label>
+                <select class="input sort-select" id="sort-order" name="sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select>
+              </div>
+              <nav class="filter-pills" aria-label="Ticket status">
+                <a class="filter-pill" href="app.html">All (128)</a>
+                <a class="filter-pill" href="unassigned.html">Unassigned (7)</a>
+                <a class="filter-pill" href="assigned.html">In progress (18)</a>
+                <a class="filter-pill" href="finished.html" aria-current="page">Finished (103)</a>
+              </nav>
+              <div class="filter-grid">
+                <label class="sr-only" for="assignee-filter">Filter by assignee</label>
+                <select class="input" id="assignee-filter" name="assignee"><option value="">Assignee: All</option><option value="alex">Alex Chen</option><option value="sarah">Sarah Jenkins</option><option value="david">David Kim</option><option value="elena">Elena Rostova</option></select>
+                <label class="sr-only" for="completed-by-filter">Filter by completed user</label>
+                <select class="input" id="completed-by-filter" name="completedBy"><option value="">Closed by: Any</option><option value="alex">Alex Chen</option><option value="sarah">Sarah Jenkins</option><option value="david">David Kim</option></select>
+                <button class="button button--small" type="reset">Reset filters</button>
+              </div>
+            </form>
+            <div class="feed-list" id="ticket-list">
+              <!-- Toggle these states and the ticket items from your mailbox controller. -->
+              <div class="empty-state" id="mail-loading" role="status" hidden>
+                Loading your mailbox…
+              </div>
+              <div class="notice notice--error" id="mail-error" role="alert" hidden>
+                Could not load emails. Please try syncing again.
+              </div>
+              <a class="mail-item" href="finished.html#ticket-detail" data-ticket-id="SEC-9921" aria-current="true">
+              <div class="mail-item-top">
+                <strong>Elena Rostova</strong><span class="department">SecOps</span><time>Yesterday</time>
+              </div>
+              <h3>Okta SAML assertion signature rotation failure</h3><p>The X.509 signing certificate expired at 14:00 UTC. Azure AD / Okta relying party trust requires re-assertion with the newly issued certificate…</p>
+              <div class="mail-item-footer">
+                <span class="badge badge--finished"><span class="dot" aria-hidden="true"></span>Finished</span><span class="mono">Completed by David Kim</span>
+              </div>
+              </a>
+              <button class="mail-item" type="button" data-action="open-ticket" data-ticket-id="TK-8910"> <span class="mail-item-top"><strong>Marcus Rivera</strong><span class="department">IT Operations</span><time>Feb 22</time></span> <span class="mail-item-subject">Outlook 365 Shared Mailbox delegation permissions</span><span class="mail-item-preview">Automated mailbox provisioning script executed successfully for the payroll team.</span> <span class="mail-item-footer"><span class="badge badge--finished"><span class="dot" aria-hidden="true"></span>Finished</span><span class="mono">Completed by David Kim</span></span> </button>
+              <button class="mail-item" type="button" data-action="open-ticket" data-ticket-id="TK-8872"> <span class="mail-item-top"><strong>Jonas Lindqvist</strong><span class="department">IT Operations</span><time>Feb 22</time></span> <span class="mail-item-subject">DKIM public key update for outbound mail gateway</span><span class="mail-item-preview">DNS selector verified against the compliance validator. TTL reset to 3600.</span> <span class="mail-item-footer"><span class="badge badge--finished"><span class="dot" aria-hidden="true"></span>Finished</span><span class="mono">Completed by David Kim</span></span> </button>
+              <button class="mail-item" type="button" data-action="open-ticket" data-ticket-id="TK-8810"> <span class="mail-item-top"><strong>Tanya H.</strong><span class="department">IT Operations</span><time>Feb 22</time></span> <span class="mail-item-subject">Exchange Hybrid Mail Connector TLS 1.3 deprecation notice</span><span class="mail-item-preview">Cipher suite compatibility audit completed for on-prem relay clusters.</span> <span class="mail-item-footer"><span class="badge badge--finished"><span class="dot" aria-hidden="true"></span>Finished</span><span class="mono">Completed by David Kim</span></span> </button>
+              <div class="empty-state" id="no-results" hidden>
+                <h2>No matching emails</h2><p>Try another search or reset your filters.</p>
+              </div>
+            </div>
+            <footer class="feed-footer">
+              <span class="mono">38 finished this week</span><button type="button" class="button button--ghost button--small" data-action="sync-mailbox" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 8a8 8 0 0 0-14-3L3 8m0-5v5h5m-4 8a8 8 0 0 0 14 3l3-3m0 5v-5h-5"/></svg><span>Refresh</span></button>
+            </footer>
+          </section>
+          <section class="ticket-workspace" id="ticket-detail" aria-labelledby="ticket-title" data-ticket-id="SEC-9921" data-ticket-status="finished">
+            <div class="ticket-toolbar" aria-label="Ticket actions">
+              <span class="badge badge--finished"><span class="dot" aria-hidden="true"></span>Finished</span><button class="button" type="button" data-action="reply-ticket"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5-6 6 6 6M3 11h10a7 7 0 0 1 7 7"/></svg><span>Reply</span></button>
+              <details class="dropdown">
+                <summary class="button button--ghost"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10a9 9 0 1 1 1 7M3 3v7h7m2-4v7l4 2"/></svg>Reopen<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+                <div class="dropdown-menu">
+                  <p class="eyebrow">Reopen this ticket</p><button type="button" class="button button--ghost" data-action="reopen-ticket" ><span>Issue reoccurred</span></button>
+                  <button type="button" class="button button--ghost" data-action="unassign-ticket" ><span>Move to unassigned</span></button>
+                </div>
+              </details>
+              <span class="toolbar-spacer"></span><button type="button" class="button" popovertarget="export-dialog"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 15v6h16v-6"/></svg><span>Export email (.eml)</span></button>
+              <button type="button" class="icon-button" aria-label="Print ticket" title="Print ticket" data-action="print-ticket" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8V2h12v6M6 17H2V8h20v9h-4M6 14h12v8H6Z"/></svg></button>
+            </div>
+            <div class="ticket-scroll">
+              <div class="ticket-content">
+                <section class="panel ticket-summary" aria-labelledby="ticket-title">
+                  <div class="ticket-tags">
+                    <span class="badge badge--critical">Priority: P1 · Urgent</span><span class="badge">Okta Org / Prod US-East</span><span class="mono">Ticket #SEC-9921</span>
+                  </div>
+                  <h2 id="ticket-title">Okta SAML assertion signature rotation failure</h2>
+                  <div class="completion-banner">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 7-7"/></svg>
+                    <div>
+                      <strong>Resolved &amp; Closed</strong><p>Duration: 1 hr 15 mins</p>
+                    </div>
+                    <span class="mono">SLA verified</span>
+                  </div>
+                  <div class="sender-card">
+                    <span class="avatar avatar--large" aria-hidden="true">DK</span>
+                    <div>
+                      <strong>Completed by David Kim</strong><p class="muted">Senior Identity Engineer</p><p>Finalized on <strong>Feb 23, 2025 at 4:40 PM EST</strong></p>
+                    </div>
+                    <span class="badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6Zm-4 10 3 3 5-6"/></svg> Signed off</span>
+                  </div>
+                </section>
+                <div class="resolution-grid">
+                  <div class="stack">
+                    <article class="panel" aria-label="Email message">
+                      <header class="message-header">
+                        <span>David Kim · Sent via Outlook 365</span><span class="mono">Yesterday 04:15 PM</span>
+                      </header>
+                      <div class="message-body">
+                        <p>Hi Elena,</p><p>I have diagnosed and successfully resolved the SAML assertion signature rotation failure for the primary Okta Identity Provider federation pipeline.</p>
+                        <div class="notice">
+                          <div>
+                            <strong>Action Log &amp; Changes Applied</strong>
+                            <ol>
+                              <li>
+                                <strong>Certificate Renewal:</strong> Generated a new 2048-bit RSA X.509 assertion signing certificate on the Okta production tenant.
+                              </li>
+                              <li>
+                                <strong>Relying Party Trust:</strong> Uploaded the updated metadata XML package to the Enterprise Application SSO connector.
+                              </li>
+                              <li>
+                                <strong>Signature Verification:</strong> SHA-256 digest matching validated across active federated session tokens.
+                              </li>
+                              <li>
+                                <strong>Smoke Test:</strong> Test authentications from EMEA and US proxy gateways returned HTTP 200 with valid SAMLResponse assertions.
+                              </li>
+                            </ol>
+                          </div>
+                        </div>
+                        <p>The production signing cert thumbprint is now synced and will not expire until <strong>February 2028</strong>. Users who were receiving the <code>AADSTS500118 / Signature_Mismatch</code> error code are now able to authenticate seamlessly without clearing their browser cookies.</p><p>I have attached the updated and digitally signed XML metadata file below for your SecOps change management records.</p><p>Best regards,<br><strong>David Kim</strong><br><span class="muted">Senior Identity &amp; Directory Services Engineer</span></p>
+                      </div>
+                      <section class="attachments" aria-label="Attachments">
+                        <h3>Attachments (1 file)</h3>
+                        <div class="attachment-list">
+                          <div class="attachment" data-attachment-id="attachment-0">
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2h9l5 5v15H5Zm9 0v6h5M8 12h8m-8 4h6"/></svg>
+                            <div>
+                              <strong>okta_metadata_signed.xml</strong><small>18 KB · XML Application Metadata</small>
+                            </div>
+                            <button type="button" class="icon-button" aria-label="Download okta_metadata_signed.xml" title="Download okta_metadata_signed.xml" data-action="download-attachment" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 15v6h16v-6"/></svg></button>
+                          </div>
+                        </div>
+                      </section>
+                    </article>
+                    <details class="panel original-message" open>
+                      <summary><span><strong>Elena Rostova</strong><br><small class="muted">Original message · Yesterday at 03:25 PM</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+                      <div class="message-body">
+                        <p>Urgent: Multiple employees in Cloud Engineering are blocked when logging into the Internal Admin Dashboard via Okta. The error thrown in the browser console states: <em>“Signature cryptographic validation failed against current identity provider metadata”.</em></p><p>Please investigate if our automated cert-manager rotated the key without publishing the updated endpoint to the relying party configuration.</p>
+                      </div>
+                    </details>
+                    <div class="notice">
+                      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8v13h16V8M2 3h20v5H2Zm7 9h6"/></svg>
+                      <div>
+                        <strong>Archived &amp; Indexed in Company Exchange Mailbox</strong><p>This ticket is finalized and remains searchable, viewable, and exportable.</p><a href="#ticket-activity">View audit log</a>
+                      </div>
+                    </div>
+                  </div>
+                  <aside class="stack resolution-context" aria-label="Completion details">
+                    <section class="panel">
+                      <div class="panel-title">
+                        <h2>Ticket Metadata</h2>
+                      </div>
+                      <dl class="metadata">
+                        <dt>Resolution state</dt><dd><span class="badge badge--finished"><span class="dot" aria-hidden="true"></span>Finished</span></dd><dt>Assignee</dt><dd>David Kim</dd><dt>Requester</dt><dd>Elena Rostova</dd><dt>Impact scope</dt><dd>Org-wide SSO</dd><dt>Turnaround time</dt><dd>1h 15m</dd><dt>SLA consumption</dt><dd>31.2% of 4h limit</dd>
+                      </dl>
+                      <progress value="31.2" max="100" aria-label="SLA consumed">31.2%</progress>
+                    </section>
+                    <section class="panel" id="ticket-activity" aria-labelledby="activity-title">
+                      <div class="panel-title">
+                        <h2 id="activity-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10a9 9 0 1 1 1 7M3 3v7h7m2-4v7l4 2"/></svg>Activity &amp; Audit Trail</h2>
+                      </div>
+                      <ol class="timeline">
+                        <li>
+                          <time>03:25 PM</time><strong>Ticket created</strong><p>Received from Outlook 365 Exchange.</p>
+                        </li>
+                        <li>
+                          <time>03:30 PM</time><strong>Ticket claimed</strong><p>Assigned to David Kim by David Kim.</p>
+                        </li>
+                        <li>
+                          <time>04:15 PM</time><strong>Reply dispatched</strong><p>New signing cert applied. Reply sent with 1 attachment.</p>
+                        </li>
+                        <li>
+                          <time>04:40 PM</time><strong>Marked as finished</strong><p>Completed by David Kim. Resolution time recorded.</p>
+                        </li>
+                      </ol>
+                    </section>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <section id="export-dialog" class="dialog" popover="auto" role="dialog" aria-labelledby="export-title" aria-describedby="export-description">
+      <header class="dialog-header">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2h9l5 5v15H5Zm9 0v6h5M8 12h8m-8 4h6"/></svg>
+        <div>
+          <h2 id="export-title">Export Email Archive</h2><p class="mono">Standard RFC-822 Transport File</p>
+        </div>
+        <button type="button" class="icon-button" aria-label="Close export dialog" title="Close export dialog" data-action="close" popovertarget="export-dialog" popovertargetaction="hide"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+      </header>
+      <div class="dialog-body">
+        <div class="notice">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.1"/></svg><p id="export-description">Export this complete email record as an industry-standard <strong>.eml</strong> file. The export includes all headers, formatted body, conversation thread, and attached files.</p>
+        </div>
+        <div class="field">
+          <label for="export-filename">Archive Filename</label>
+          <div class="row">
+            <input class="input mono" id="export-filename" name="filename" value="CompanyMail_SEC-9921_email_archive.eml" readonly><button type="button" class="button button--small" data-action="copy-export-filename" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="7" width="12" height="14" rx="2"/><path d="M16 7V3H4v14h4"/></svg><span>Copy</span></button>
+          </div>
+        </div>
+        <div class="notice">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2h9l5 5v15H5Zm9 0v6h5M8 12h8m-8 4h6"/></svg>
+          <div>
+            <strong>Format: .eml</strong><p>Default for Outlook, Apple Mail, Thunderbird</p>
+          </div>
+        </div>
+        <section>
+          <h3>Included Elements in this Package</h3>
+          <ul class="export-inclusions">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 7-7"/></svg>Original RFC-822 email headers<span class="mono">DKIM / SPF preserved</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 7-7"/></svg>Complete HTML &amp; plain text message body<span class="mono">UTF-8 encoded</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 7-7"/></svg><span>1 attachment(s): <strong>okta_metadata_signed.xml</strong></span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 7-7"/></svg>System task assignment audit metadata<span class="mono">X-Ticket-ID: SEC-9921</span>
+            </li>
+          </ul>
+        </section>
+        <div class="notice">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6Zm-4 10 3 3 5-6"/></svg><p><strong>Notice:</strong> Exporting this email does not mark it as finished or remove it from your active mailbox queue.</p>
+        </div>
+        <p id="export-status" role="status" hidden></p>
+      </div>
+      <footer class="dialog-footer">
+        <button type="button" class="button button--secondary" popovertarget="export-dialog" popovertargetaction="hide"><span>Cancel</span></button>
+        <button type="button" class="button button--primary" data-action="download-eml" data-ticket-id="SEC-9921"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 15v6h16v-6"/></svg><span>Download .eml</span></button>
+      </footer>
+    </section>
+  </body>
+</html>

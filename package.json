@@ -4,6 +4,7 @@
   "description": "This is a web application for managing incoming Outlook emails as tickets. The goal is to help a support team organize its mailbox, assign responsibility, and track and have complete log of done work.",
   "main": "index.js",
   "scripts": {
+    "start backend": "tsx watch src/app.ts",
     "generate-test-passwords": "tsx src/scripts/generate-password-hashes.ts",
     "migration": "tsx src/scripts/migrate.ts",
     "seed": "tsx src/scripts/seed-development.ts",
