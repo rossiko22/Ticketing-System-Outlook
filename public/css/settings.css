@@ -42,6 +42,9 @@
 .export-option p { font-size: 11px; color: var(--muted); }
 .export-option small { font-family: var(--mono); font-size: 9px; color: var(--muted); margin-top: auto; }
 .preference-card { display: grid; gap: 10px; }
+.backup-folder { margin-bottom: 24px; padding: 16px; background: var(--surface-low); border-radius: var(--radius); }
+.backup-folder .icon { color: var(--primary-dark); }
+.backup-folder .input { width: 100%; min-width: 0; background: var(--surface); }
 .preference-card p { font-size: 11px; color: var(--muted); }
 .switch { appearance: none; position: relative; flex: 0 0 36px; width: 36px; height: 21px; margin: 0; background: #aab4c6; border: 1px solid transparent; border-radius: 99px; cursor: pointer; }
 .switch::before { content: ""; position: absolute; top: 2px; left: 2px; width: 15px; height: 15px; background: white; border-radius: 50%; transition: transform .15s; }
@@ -69,3 +72,10 @@
 @media (max-width: 1250px) { .settings-heading { align-items: flex-start; flex-direction: column; gap: 18px; } .settings-grid { grid-template-columns: minmax(0, 1fr) 240px; gap: 18px; } .identity-grid { grid-template-columns: 1fr; } .settings-page { padding: 24px; } .connection-specs { grid-template-columns: 1fr; } .export-options { grid-template-columns: 1fr; } }
 @media (max-width: 900px) { .settings-grid { grid-template-columns: minmax(0, 1fr); } .identity-grid { grid-template-columns: 1fr 1fr; } .settings-context { display: grid; grid-template-columns: 1fr 1fr; } .export-options { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .settings-page { padding: 22px 16px; } .settings-page h1 { font-size: 23px; } .identity-grid, .preference-grid, .settings-context { grid-template-columns: 1fr; } .settings-actions { flex-wrap: wrap; } .export-options { grid-template-columns: 1fr; } .panel-title { flex-wrap: wrap; } .diagnostics > .row { flex-wrap: wrap; } }
+
+.backup-folder-control { display: flex; gap: 8px; align-items: stretch; }
+.backup-folder-control .input { flex: 1; }
+.backup-folder-control .button { flex-shrink: 0; white-space: nowrap; }
+@media (max-width: 480px) { .backup-folder-control { flex-direction: column; } }
+
+.settings-footer { display: flex; justify-content: flex-end; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); }

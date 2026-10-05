@@ -9,60 +9,15 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/settings.css">
+    <script src="js/components/app-sidebar.js" defer></script>
+    <script src="js/components/app-navbar.js" defer></script>
+    <script src="js/components/ticket-card.js" defer></script>
+    <script src="js/settings.js" defer></script>
   </head>
   <body data-page="settings">
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="app-shell">
-      <aside class="sidebar" aria-label="Application navigation">
-        <a class="sidebar-brand" href="app.html" aria-label="Ticket Mail home"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>Ticket Mail</span><small class="version mono">v2.4</small></a> <a class="button button--primary compose-link" href="compose.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 4 6 6M4 20l5-1L21 7a2 2 0 0 0-4-4L5 15l-1 5ZM12 4H4v18h16v-9"/></svg><span>New Ticket / Compose</span></a>
-        <nav class="sidebar-nav" aria-label="Mailbox">
-          <a class="nav-link" href="app.html" aria-label="All mail"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l2 12v4H2v-4L4 4Z"/><path d="M2 15h6l2 3h4l2-3h6"/></svg><span class="nav-label">All mail</span><span class="count" data-count="all">128</span></a>
-          <a class="nav-link" href="unassigned.html" aria-label="Unassigned"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 2h6v4H9zM9 11h6m-6 4h3"/></svg><span class="nav-label">Unassigned</span><span class="count" data-count="unassigned">7</span></a>
-          <a class="nav-link" href="assigned.html" aria-label="Assigned"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 20v-3a7 7 0 0 1 14 0v3ZM16 4a3 3 0 0 1 0 6m3 4a6 6 0 0 1 3 6"/></svg><span class="nav-label">Assigned</span><span class="count" data-count="assigned">32</span></a>
-          <a class="nav-link nav-link--nested" href="assigned-to-me.html" aria-label="Assigned to me"><span class="nav-label">Assigned to me</span><span class="count" data-count="mine">11</span></a>
-          <a class="nav-link" href="settings.html" aria-label="Settings" aria-current="page"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 3-1 3-3 1 1 3-2 2 2 2-1 3 3 1 1 3h6l1-3 3-1-1-3 2-2-2-2 1-3-3-1-1-3Z"/><circle cx="12" cy="12" r="3"/></svg><span class="nav-label">Settings</span></a>
-        </nav>
-        <div class="sidebar-bottom">
-          <div class="sync-card" data-sync-state="connected">
-            <div class="row">
-              <span class="dot"></span><strong>Exchange Synced</strong>
-            </div>
-            <p class="mono" data-mailbox>support@company.internal</p><p class="mono">Polling every 30s</p>
-          </div>
-          <div class="user-card">
-            <div>
-              <strong data-current-user>Alex Chen</strong><small>IT Ops Specialist</small>
-            </div>
-            <button type="button" class="icon-button" aria-label="Sign out" title="Sign out" data-action="logout" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3H4v18h6m-1-9h13m-4-4 4 4-4 4"/></svg></button>
-          </div>
-        </div>
-      </aside>
-      <header class="topbar">
-        <a href="app.html" aria-label="Company Mail Portal home"><img class="brand-logo" src="assets/images/company-mail-logo.png" alt="Company Mail — Internal Ticketing" width="137" height="42"></a>
-        <nav class="top-nav" aria-label="Quick navigation">
-          <a href="app.html">All mail</a>
-          <a href="unassigned.html">Unassigned</a>
-          <a href="assigned.html">Assigned</a>
-          <a href="settings.html" aria-current="page">Settings</a>
-        </nav>
-        <div class="search-field global-search">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><label class="sr-only" for="global-search">Search all tickets</label><input class="input" id="global-search" name="global-search" type="search" placeholder="Search tickets, senders, subjects…" data-search="global"><kbd aria-hidden="true">⌘K</kbd>
-        </div>
-        <div class="sync-indicator mono">
-          <span class="dot"></span><span data-sync-status>Mailbox Sync Active · 1m ago</span>
-        </div>
-        <a class="mobile-compose icon-button" href="compose.html" aria-label="Compose new message"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></a>
-        <div class="topbar-actions">
-          <button type="button" class="icon-button" aria-label="Notifications" title="Notifications" data-action="notifications" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg></button>
-          <button type="button" class="icon-button" aria-label="Documentation and help" title="Documentation and help" data-action="help" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 5m0 3v.1"/></svg></button>
-          <div class="profile">
-            <img class="avatar" src="assets/images/alex-chen.png" alt="" width="44" height="44">
-            <div>
-              <strong>Alex Chen</strong><small class="mono">(IT Operations)</small>
-            </div>
-          </div>
-        </div>
-      </header>
+      <app-sidebar active="settings"></app-sidebar>
       <main class="workspace settings-workspace" id="main-content">
         <div class="settings-page">
           <form id="settings-form" data-form="settings">
@@ -70,10 +25,7 @@
               <div>
                 <p class="eyebrow mono">Portal Preferences / Global Configuration</p><h1>Settings &amp; System Integrations</h1><p>Manage connected Outlook accounts, sync intervals, security scopes, and ticket export formats.</p>
               </div>
-              <div class="settings-actions">
-                <button class="button" type="reset"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10a9 9 0 1 1 1 7M3 3v7h7m2-4v7l4 2"/></svg>Reset Draft Changes</button>
-                <button type="button" class="button button--primary" data-action="save-settings" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 7-7"/></svg><span>Apply Changes</span></button>
-              </div>
+              <app-navbar></app-navbar>
             </header>
             <div id="settings-feedback" class="notice notice--success settings-feedback" role="status" hidden>
               Changes saved.
@@ -164,6 +116,17 @@
                       <label class="export-option"><input type="radio" name="exportFormat" value="pdf" ><strong>.pdf + Attachments</strong><p>Printable single-file ledger with attached binary payloads bundled.</p><small>Long-term storage</small></label>
                     </div>
                   </fieldset>
+                  <div class="preference-card backup-folder">
+                    <label class="row" for="backup-directory"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V4h6l2 3h10v13H3V7Z"/></svg><strong>Backup folder</strong></label>
+                    <p id="backup-directory-help">Enter a server folder path, or select a local folder on this computer.</p>
+                    <div class="backup-folder-control">
+                      <input class="input mono" type="text" id="backup-directory" name="backupDirectory" placeholder="e.g. /var/backups/company-mail" aria-describedby="backup-directory-help backup-folder-status" autocomplete="off" spellcheck="false">
+                      <button class="button button--secondary" type="button" id="select-backup-folder"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V4h6l2 3h10v13H3V7Z"/></svg><span>Select folder</span></button>
+                    </div>
+                    <input type="file" id="folderInput" webkitdirectory directory multiple hidden>
+                    <input type="hidden" name="backupDestinationType" id="backup-destination-type" value="server">
+                    <p id="backup-folder-status" role="status" hidden></p>
+                  </div>
                   <div class="preference-grid">
                     <div class="preference-card">
                       <div class="row between">
@@ -214,6 +177,9 @@
                 </section>
               </aside>
             </div>
+            <footer class="settings-footer">
+              <button type="button" class="button button--primary" data-action="save-settings" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 7-7"/></svg><span>Apply Changes</span></button>
+            </footer>
           </form>
         </div>
       </main>

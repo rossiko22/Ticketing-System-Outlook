@@ -9,60 +9,15 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/composer.css">
+    <script src="js/components/app-sidebar.js" defer></script>
+    <script src="js/components/app-navbar.js" defer></script>
+    <script src="js/components/ticket-card.js" defer></script>
+    <script src="js/components/mail-feed.js" defer></script>
   </head>
   <body data-page="mine">
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="app-shell">
-      <aside class="sidebar" aria-label="Application navigation">
-        <a class="sidebar-brand" href="app.html" aria-label="Ticket Mail home"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>Ticket Mail</span><small class="version mono">v2.4</small></a> <a class="button button--primary compose-link" href="compose.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 4 6 6M4 20l5-1L21 7a2 2 0 0 0-4-4L5 15l-1 5ZM12 4H4v18h16v-9"/></svg><span>New Ticket / Compose</span></a>
-        <nav class="sidebar-nav" aria-label="Mailbox">
-          <a class="nav-link" href="app.html" aria-label="All mail"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l2 12v4H2v-4L4 4Z"/><path d="M2 15h6l2 3h4l2-3h6"/></svg><span class="nav-label">All mail</span><span class="count" data-count="all">128</span></a>
-          <a class="nav-link" href="unassigned.html" aria-label="Unassigned"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 2h6v4H9zM9 11h6m-6 4h3"/></svg><span class="nav-label">Unassigned</span><span class="count" data-count="unassigned">7</span></a>
-          <a class="nav-link" href="assigned.html" aria-label="Assigned"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 20v-3a7 7 0 0 1 14 0v3ZM16 4a3 3 0 0 1 0 6m3 4a6 6 0 0 1 3 6"/></svg><span class="nav-label">Assigned</span><span class="count" data-count="assigned">32</span></a>
-          <a class="nav-link nav-link--nested" href="assigned-to-me.html" aria-label="Assigned to me" aria-current="page"><span class="nav-label">Assigned to me</span><span class="count" data-count="mine">11</span></a>
-          <a class="nav-link" href="settings.html" aria-label="Settings"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 3-1 3-3 1 1 3-2 2 2 2-1 3 3 1 1 3h6l1-3 3-1-1-3 2-2-2-2 1-3-3-1-1-3Z"/><circle cx="12" cy="12" r="3"/></svg><span class="nav-label">Settings</span></a>
-        </nav>
-        <div class="sidebar-bottom">
-          <div class="sync-card" data-sync-state="connected">
-            <div class="row">
-              <span class="dot"></span><strong>Exchange Synced</strong>
-            </div>
-            <p class="mono" data-mailbox>support@company.internal</p><p class="mono">Polling every 30s</p>
-          </div>
-          <div class="user-card">
-            <div>
-              <strong data-current-user>Alex Chen</strong><small>IT Ops Specialist</small>
-            </div>
-            <button type="button" class="icon-button" aria-label="Sign out" title="Sign out" data-action="logout" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3H4v18h6m-1-9h13m-4-4 4 4-4 4"/></svg></button>
-          </div>
-        </div>
-      </aside>
-      <header class="topbar">
-        <a href="app.html" aria-label="Company Mail Portal home"><img class="brand-logo" src="assets/images/company-mail-logo.png" alt="Company Mail — Internal Ticketing" width="137" height="42"></a>
-        <nav class="top-nav" aria-label="Quick navigation">
-          <a href="app.html">All mail</a>
-          <a href="unassigned.html">Unassigned</a>
-          <a href="assigned.html">Assigned</a>
-          <a href="settings.html">Settings</a>
-        </nav>
-        <div class="search-field global-search">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><label class="sr-only" for="global-search">Search all tickets</label><input class="input" id="global-search" name="global-search" type="search" placeholder="Search tickets, senders, subjects…" data-search="global"><kbd aria-hidden="true">⌘K</kbd>
-        </div>
-        <div class="sync-indicator mono">
-          <span class="dot"></span><span data-sync-status>Mailbox Sync Active · 1m ago</span>
-        </div>
-        <a class="mobile-compose icon-button" href="compose.html" aria-label="Compose new message"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></a>
-        <div class="topbar-actions">
-          <button type="button" class="icon-button" aria-label="Notifications" title="Notifications" data-action="notifications" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg></button>
-          <button type="button" class="icon-button" aria-label="Documentation and help" title="Documentation and help" data-action="help" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 5m0 3v.1"/></svg></button>
-          <div class="profile">
-            <img class="avatar" src="assets/images/alex-chen.png" alt="" width="44" height="44">
-            <div>
-              <strong>Alex Chen</strong><small class="mono">(IT Operations)</small>
-            </div>
-          </div>
-        </div>
-      </header>
+      <app-sidebar active="mine"></app-sidebar>
       <main class="workspace" id="main-content">
         <header class="workspace-heading">
           <div class="row wrap">
@@ -71,91 +26,23 @@
           <div class="workspace-metrics">
             <span class="row"><span class="dot"></span>Live Exchange Link: Healthy</span><span>SLA breaches: <strong>0</strong></span><span>Avg resolution: <strong>18m 40s</strong></span>
           </div>
+          <app-navbar></app-navbar>
         </header>
         <div class="mail-layout">
-          <section class="mail-feed" aria-label="Email tickets">
-            <form class="feed-controls" id="mail-filters" role="search">
-              <div class="row">
-                <div class="search-field">
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><label class="sr-only" for="mail-search">Search this mailbox</label><input class="input" type="search" id="mail-search" name="search" placeholder="Search sender, subject, or content…">
-                </div>
-                <button type="button" class="icon-button" aria-label="Sync Outlook mailbox" title="Sync Outlook mailbox" data-action="sync-mailbox" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 8a8 8 0 0 0-14-3L3 8m0-5v5h5m-4 8a8 8 0 0 0 14 3l3-3m0 5v-5h-5"/></svg></button>
-              </div>
-              <div class="row between feed-sync">
-                <span class="row"><span class="dot"></span><span>Connected · <span data-last-sync>32s ago</span></span></span><label class="sr-only" for="sort-order">Sort tickets</label>
-                <select class="input sort-select" id="sort-order" name="sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select>
-              </div>
-              <nav class="filter-pills" aria-label="Ticket status">
-                <a class="filter-pill" href="app.html">All (128)</a>
-                <a class="filter-pill" href="unassigned.html">Unassigned (7)</a>
-                <a class="filter-pill" href="assigned.html">In progress (18)</a>
-                <a class="filter-pill" href="finished.html">Finished (103)</a>
-              </nav>
-              <div class="filter-grid">
-                <label class="sr-only" for="assignee-filter">Filter by assignee</label>
-                <select class="input" id="assignee-filter" name="assignee"><option value="">Assignee: All</option><option value="alex">Alex Chen</option><option value="sarah">Sarah Jenkins</option><option value="david">David Kim</option><option value="elena">Elena Rostova</option></select>
-                <label class="sr-only" for="completed-by-filter">Filter by completed user</label>
-                <select class="input" id="completed-by-filter" name="completedBy"><option value="">Closed by: Any</option><option value="alex">Alex Chen</option><option value="sarah">Sarah Jenkins</option><option value="david">David Kim</option></select>
-                <button class="button button--small" type="reset">Reset filters</button>
-              </div>
-            </form>
-            <div class="feed-list" id="ticket-list">
-              <!-- Toggle these states and the ticket items from your mailbox controller. -->
-              <div class="empty-state" id="mail-loading" role="status" hidden>
-                Loading your mailbox…
-              </div>
-              <div class="notice notice--error" id="mail-error" role="alert" hidden>
-                Could not load emails. Please try syncing again.
-              </div>
-              <a class="mail-item" href="assigned-to-me.html#ticket-detail" data-ticket-id="TK-9042" aria-current="true">
-              <div class="mail-item-top">
-                <span class="dot" aria-label="Unread"></span><strong>Rachel Green</strong><span class="department">Finance Ops</span><time>08:15 AM</time>
-              </div>
-              <h3>Urgent: Payroll export script failing with TLS handshake error</h3><p>The automated 08:00 UTC batch run just crashed. We have 450 contractor disbursements blocked. Log output attached.</p>
-              <div class="mail-item-footer">
-                <span class="badge badge--progress"><span class="dot" aria-hidden="true"></span>In progress</span><span class="mono">#TK-9042</span>
-              </div>
-              </a>
-              <a class="mail-item" href="unassigned.html#ticket-detail" data-ticket-id="TK-8941">
-              <div class="mail-item-top">
-                <span class="dot" aria-label="Unread"></span><strong>Marcus Vance</strong><span class="department">DevOps</span><time>09:42 AM</time>
-              </div>
-              <h3>VPN gateway connection timeout for Berlin office staff</h3><p>Hey triage team, multiple remote team members in Mitte are getting disconnect error code 0x8007274C upon 2FA handshake verification…</p>
-              <div class="mail-item-footer">
-                <span class="badge badge--unassigned"><span class="dot" aria-hidden="true"></span>Unassigned</span><span class="mono">#TK-8941</span>
-              </div>
-              </a>
-              <a class="mail-item" href="finished.html#ticket-detail" data-ticket-id="SEC-9921">
-              <div class="mail-item-top">
-                <strong>Elena Rostova</strong><span class="department">SecOps</span><time>Yesterday</time>
-              </div>
-              <h3>Okta SAML assertion signature rotation failure</h3><p>The X.509 signing certificate expired at 14:00 UTC. Azure AD / Okta relying party trust requires re-assertion with the newly issued certificate…</p>
-              <div class="mail-item-footer">
-                <span class="badge badge--finished"><span class="dot" aria-hidden="true"></span>Finished</span><span class="mono">Completed by David Kim</span>
-              </div>
-              </a>
-              <div class="empty-state" id="no-results" hidden>
-                <h2>No matching emails</h2><p>Try another search or reset your filters.</p>
-              </div>
-            </div>
-            <footer class="feed-footer">
-              <span class="mono">Auto-syncing Outlook</span><button type="button" class="button button--ghost button--small" data-action="sync-mailbox" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 8a8 8 0 0 0-14-3L3 8m0-5v5h5m-4 8a8 8 0 0 0 14 3l3-3m0 5v-5h-5"/></svg><span>Refresh</span></button>
-            </footer>
-          </section>
+          <mail-feed status="all" tickets="TK-9042 TK-8941 SEC-9921" selected-ticket="TK-9042"></mail-feed>
           <section class="ticket-workspace" id="ticket-detail" aria-labelledby="ticket-title" data-ticket-id="TK-9042" data-ticket-status="in-progress">
             <div class="ticket-toolbar" aria-label="Ticket actions">
               <button type="button" class="button button--primary" data-action="finish-ticket" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 7-7"/></svg><span>Mark as finished</span></button>
               <details class="dropdown">
                 <summary class="button"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 20v-3a7 7 0 0 1 14 0v3ZM16 4a3 3 0 0 1 0 6m3 4a6 6 0 0 1 3 6"/></svg>Reassign<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
                 <div class="dropdown-menu">
-                  <p class="eyebrow">IT Operations Team</p><button type="button" class="assignment-option" data-action="assign-ticket" data-user-id="alex"><img class="avatar" src="assets/images/alex-chen.png" alt="" width="44" height="44"><span>Alex Chen<small>11 active tickets</small></span></button>
+                  <p class="eyebrow">IT Operations Team</p><button type="button" class="assignment-option" data-action="assign-ticket" data-user-id="alex"><img class="avatar" src="assets/images/alex-chen.png" alt="" width="44" height="44"><span>Alex Chen (You)<small>11 active tickets</small></span></button>
                   <button type="button" class="assignment-option" data-action="assign-ticket" data-user-id="sarah"><span class="avatar" aria-hidden="true">SJ</span><span>Sarah Jenkins<small>6 active tickets</small></span></button>
                   <button type="button" class="assignment-option" data-action="assign-ticket" data-user-id="david"><span class="avatar" aria-hidden="true">DK</span><span>David Kim<small>9 active tickets</small></span></button>
                   <button type="button" class="assignment-option" data-action="assign-ticket" data-user-id="elena"><span class="avatar" aria-hidden="true">ER</span><span>Elena Rostova<small>4 active tickets</small></span></button>
                 </div>
               </details>
-              <a class="button" href="reply.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5-6 6 6 6M3 11h10a7 7 0 0 1 7 7"/></svg><span>Reply</span></a><span class="toolbar-spacer"></span><button type="button" class="button" popovertarget="export-dialog"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 15v6h16v-6"/></svg><span>Export email (.eml)</span></button>
-              <button type="button" class="icon-button" aria-label="Print ticket" title="Print ticket" data-action="print-ticket" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8V2h12v6M6 17H2V8h20v9h-4M6 14h12v8H6Z"/></svg></button>
+              <a class="button" href="reply.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5-6 6 6 6M3 11h10a7 7 0 0 1 7 7"/></svg><span>Reply</span></a><span class="toolbar-spacer"></span><button type="button" class="button" popovertarget="export-dialog"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 15v6h16v-6"/></svg><span>Export email</span></button>
             </div>
             <div class="ticket-scroll">
               <div class="ticket-content">
