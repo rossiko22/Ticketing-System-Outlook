@@ -1,4 +1,4 @@
-## Ticketing System Outlook
+### Ticketing System Outlook
 This is a web application for managing incoming Outlook emails as tickets. The goal is to help a support team organize its mailbox, assign responsibility, and track and have complete log of done work.
 
 ## Project Status
