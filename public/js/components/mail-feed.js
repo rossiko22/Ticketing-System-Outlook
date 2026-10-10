@@ -7,7 +7,6 @@
                 <div class="search-field">
                   <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><label class="sr-only" for="mail-search">Search this mailbox</label><input class="input" type="search" id="mail-search" name="search" placeholder="Search sender, subject, or content…">
                 </div>
-                <button type="button" class="icon-button" aria-label="Sync Outlook mailbox" title="Sync Outlook mailbox" data-action="sync-mailbox" ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 8a8 8 0 0 0-14-3L3 8m0-5v5h5m-4 8a8 8 0 0 0 14 3l3-3m0 5v-5h-5"/></svg></button>
               </div>
               <div class="feed-selects">
                 <div>

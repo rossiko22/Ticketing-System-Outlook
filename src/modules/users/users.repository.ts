@@ -36,7 +36,7 @@ export async function findById(id: UUID): Promise<User | null>{
                 created_at as "createdAt",
                 updated_at as "updatedAt"
             FROM users
-            WHERE id = lower($1)
+            WHERE user_id = $1
         `,
         [id.trim()],
     )

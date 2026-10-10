@@ -1,49 +1,25 @@
-// Folder selection only; applying settings and creating backups need a controller.
 (() => {
-  const form = document.querySelector('#settings-form');
-  const input = document.querySelector('#backup-directory');
-  const button = document.querySelector('#select-backup-folder');
-  const folderInput = document.querySelector('#folderInput');
-  const type = document.querySelector('#backup-destination-type');
-  const status = document.querySelector('#backup-folder-status');
-  if (!form || !input || !button || !folderInput || !type || !status) return;
-
-  const notify = message => {
-    status.textContent = message;
-    status.hidden = !message;
-  };
-  const useServerPath = () => {
-    type.value = 'server';
-    input.name = 'backupDirectory';
-    folderInput.value = '';
-    notify('');
-  };
-  input.addEventListener('input', useServerPath);
-  form.addEventListener('reset', useServerPath);
-
-  button.addEventListener('click', () => {
-    if (!('webkitdirectory' in folderInput)) {
-      notify('Folder selection is unavailable in this browser. Enter a server folder path instead.');
-      return;
-    }
-    folderInput.click();
-  });
-
-  folderInput.addEventListener('change', event => {
-    const files = event.target.files;
-    const relativePath = files[0]?.webkitRelativePath;
-    if (!relativePath || !relativePath.includes('/')) {
-      notify('No folder files were selected. Choose a folder containing files, or enter a server path.');
-      return;
-    }
-    // Relative paths identify the folder name, not its absolute server location.
-    const folderName = relativePath.split('/')[0];
-    input.value = folderName;
-    input.name = 'backupFolderName';
-    type.value = 'local';
-    notify(`Selected folder: ${folderName}. This selects existing files; it does not enable writing backups to this folder.`);
-    // No upload or file reads are needed to display the folder name.
-    // The file input has no name, so its files are excluded from FormData.
-    folderInput.value = '';
+  const { api, json, ready, setMeta } = window.mailApp;
+  const form = document.querySelector('#token-form'); const input = document.querySelector('#outlook-token');
+  const feedback = document.querySelector('#token-feedback'); const status = document.querySelector('#connection-status');
+  async function connection() {
+    const data = await api('/emails/connection');
+    status.textContent = `${data.mailbox} · ${data.source === 'settings' ? 'Token saved in Settings' : 'Using server environment token'}${data.updatedAt ? ` · updated ${new Date(data.updatedAt).toLocaleString()}` : ''}`;
+    form.hidden = data.mode !== 'access_token';
+    if (data.mode !== 'access_token') status.textContent += ' · Application credentials are managed on the server.';
+  }
+  ready.then(async () => {
+    const meta = await api('/emails/meta'); setMeta(meta);
+    if (!meta.canManage) { status.textContent = 'Only the mailbox owner can update the Outlook connection.'; return; }
+    await connection();
+  }).catch(error => { status.textContent = error.message; });
+  form.addEventListener('submit', async event => {
+    event.preventDefault(); const button = form.querySelector('button'); button.disabled = true;
+    feedback.textContent = 'Verifying your Outlook account and saving the token…';
+    try {
+      const result = await api('/emails/connection/token', json('PUT', { token: input.value.trim() }));
+      input.value = ''; feedback.textContent = result.message; await connection();
+    } catch (error) { feedback.textContent = error.message; }
+    finally { button.disabled = false; }
   });
 })();

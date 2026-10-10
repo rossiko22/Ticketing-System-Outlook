@@ -3,16 +3,16 @@ This is a web application for managing incoming Outlook emails as tickets. The g
 
 ## Project Status
 
-Early development — project planning and initial setup.
+Early development. The main mailbox page now supports Microsoft Graph mail import and PostgreSQL persistence. See [Microsoft Graph setup](documentation/microsoft-graph.md) for credentials, permissions, commands and current limitations.
 
-The features below are planned and are not yet presented as implemented.
+The checklist below tracks the broader planned feature set.
 
 ## Planned Features
 
 - [ ] Email and password login for existing accounts, without public registration or password recovery.
 - [ ] Mailbox views for all, unassigned, and assigned emails.
 - [ ] Search and filters, including ticket status and the user who completed a ticket.
-- [ ] Outlook email synchronization and persistent email records in PostgreSQL.
+- [x] Manual Outlook Inbox synchronization and persistent email records in PostgreSQL.
 - [ ] An email reading view with sender information, message content, and attachments.
 - [ ] Assignment of tickets to another user or to the current user.
 - [ ] Ticket completion restricted to the assigned user.

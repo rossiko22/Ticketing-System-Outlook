@@ -20,7 +20,7 @@ export function createUserService(userRepository: UserRepository) {
     ): Promise<SafeUser> {
 
         const normalizedEmail = email.trim();
-        const user = await userRepository.findByEmail(email);
+        const user = await userRepository.findByEmail(normalizedEmail);
 
         if (user) {
             throw new Error("User already exists");
@@ -28,7 +28,7 @@ export function createUserService(userRepository: UserRepository) {
 
         const hashedPassword = await hashPassword(password);
 
-        const createdUser = await userRepository.create(email, password, role, avatarPath);
+        const createdUser = await userRepository.create(normalizedEmail, hashedPassword, role, avatarPath);
 
         return toSafeUser(createdUser);
     }
@@ -37,7 +37,7 @@ export function createUserService(userRepository: UserRepository) {
         const user = await userRepository.findByEmail(email);
 
         if (!user) {
-            throw new Error("User does not exist.");
+            return null;
         }
 
         const passwordMatches = await verifyHashPassword(user.passwordHash, password);
